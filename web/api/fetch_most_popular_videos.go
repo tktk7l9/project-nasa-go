@@ -2,7 +2,6 @@ package api
 
 import (
 	"context"
-
 	"os"
 
 	"github.com/labstack/echo"
@@ -23,7 +22,7 @@ func FetchMostPopularVideos() echo.HandlerFunc {
 		}
 
 		call := yts.Videos.
-			List("id,snippet").
+			List([]string{"id,snippet"}).
 			Chart("mostPopular").
 			MaxResults(3)
 

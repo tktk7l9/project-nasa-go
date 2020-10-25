@@ -13,7 +13,6 @@ func init() {
 	if err != nil {
 		logrus.Fatal("Error loading .env")
 	}
-
 	logrus.SetLevel(logrus.DebugLevel)
 	logrus.SetFormatter(&logrus.JSONFormatter{})
 }
@@ -21,7 +20,7 @@ func init() {
 func main() {
 	e := echo.New()
 
-	// MiddleWares
+	// Middlewares
 	e.Use(middleware.Logger())
 	e.Use(middleware.CORS())
 
